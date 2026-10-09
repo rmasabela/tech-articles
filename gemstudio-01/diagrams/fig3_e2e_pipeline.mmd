@@ -1,0 +1,46 @@
+flowchart TD
+    %% -------------------------------------------------------------
+    %% Top Level: Stage 1 (Wide horizontal layout)
+    %% -------------------------------------------------------------
+    subgraph S1 ["1. Local Authoring & Validation"]
+        A["gems/{gem-slug}/<br/>• meta.yaml<br/>• instructions.md"]
+        S["schemas/gem-configuration.schema.json<br/>(Draft 2020-12)"]
+        B["scripts/build-gem.py<br/>(Local Compiler & Validator)"]
+        C["dist/{gem-slug}.json<br/>(Release Manifest)"]
+
+        A --> B
+        S -->|Validates| B
+        B --> C
+    end
+
+    %% -------------------------------------------------------------
+    %% Middle Level: Stage 2 (Wide horizontal layout)
+    %% -------------------------------------------------------------
+    subgraph S2 ["2. Automated CI/CD Engine"]
+        CI["CI Workflow (ci.yml)<br/>Schema lint & verification"]
+        CD["CD Workflow (deploy.yml)<br/>Master catalog compilation"]
+        Pages["GitHub Pages CDN<br/>(Static REST API index.json)"]
+
+        CI -->|workflow_run: success| CD
+        CD -->|Deploys bundle| Pages
+    end
+
+    %% -------------------------------------------------------------
+    %% Bottom Level: Stage 3 (Wide horizontal layout)
+    %% -------------------------------------------------------------
+    subgraph S3 ["3. Last-Mile Browser Deployment"]
+        TM["Tampermonkey Userscript<br/>(gem-studio-sync.user.js)"]
+        UI["Google Gemini Web Interface<br/>(Reactive DOM Hydration)"]
+
+        TM -->|DOM Event Dispatch<br/>InputEvent & execCommand| UI
+    end
+
+    %% Transiciones verticales entre bloques completos
+    S1 -->|git push origin main| S2
+    S2 -->|GM_xmlhttpRequest catalog fetch| S3
+
+    %% Clases visuales de estilo
+    classDef stage fill:#1e1e2e,stroke:#89b4fa,stroke-width:1.5px,color:#cdd6f4;
+    classDef step fill:#181825,stroke:#45475a,stroke-width:1px,color:#cdd6f4;
+    class S1,S2,S3 stage;
+    class A,S,B,C,CI,CD,Pages,TM,UI step;

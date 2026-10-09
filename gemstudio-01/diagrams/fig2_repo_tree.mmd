@@ -1,11 +1,16 @@
 graph TD
-    subgraph Repo["gem-studio/"]
-        S["schemas/gem-configuration.schema.json"]
-        G["gems/ (_template, vault-distiller)"]
-        SC["scripts/build-gem.py"]
-        WF[".github/workflows/ (ci.yml, deploy.yml)"]
-        TM["integrations/tampermonkey/gem-studio-sync.user.js"]
+    subgraph Repo ["gem-studio/ (Modular Structure)"]
+        direction TB
+        subgraph Core ["Contracts & Build Tools"]
+            S["schemas/gem-configuration.schema.json"]
+            SC["scripts/build-gem.py"]
+        end
+        subgraph Delivery ["Modules & Deployment"]
+            G["gems/ (_template, vault-distiller)"]
+            WF[".github/workflows/ (ci.yml, deploy.yml)"]
+            TM["integrations/tampermonkey/gem-studio-sync.user.js"]
+        end
     end
 
     classDef dir fill:#1e1e2e,stroke:#89b4fa,stroke-width:2px,color:#cdd6f4;
-    class Repo,S,G,SC,WF,TM dir;
+    class Repo,Core,Delivery,S,G,SC,WF,TM dir;
