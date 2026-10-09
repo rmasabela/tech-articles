@@ -130,7 +130,7 @@ Para desglosar en profundidad cada una de las capas de diseño de software, infr
 - **Entrega 5:** *La Fábrica de Cómputo — CI/CD soberano: Runners efímeros en Docker y despliegue estático a coste cero*.
 - **Entrega 6:** *La Última Milla — Bypasseando la SPA: Inyección reactiva y sincronización client-side con Tampermonkey*.
 - **Entrega 7:** *Caso de Estudio I: La Topología del Diálogo — VaultDistiller: De sesiones caóticas de terminal a grafos atómicos en Obsidian*.
-- **Entrega 8:** *Caso de Estudio II: La Odisea de la Implementación — De NEWTON-SPARK a TITAN-SHIFT: Crónica de un despliegue multiplataforma real*.
+- **Entrega 8:** *Caso de Estudio II: La Odisea de la Implementación — De macOS a Windows/WSL2: Crónica de un despliegue multiplataforma real*.
 - **Entrega 9:** *El Futuro Agéntico — Más allá de las Gems: Prompt-as-Code como cimiento para arquitecturas agénticas abiertas*.
 
 ---
@@ -140,3 +140,4 @@ El código fuente completo de la plataforma, los esquemas formales en JSON, las 
 > Repositorio oficial: **[rmasabela/gem-studio](https://github.com/rmasabela/gem-studio)**
 
 En la siguiente entrega, realizaremos la autopsia técnica a las plataformas web de asistentes personalizados de OpenAI y Google, examinando los límites arquitectónicos que precipitaron su estancamiento y analizando por qué el modelo basado en interfaces gráficas no puede escalar hacia sistemas agénticos de nivel industrial.
+
