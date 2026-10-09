@@ -4,7 +4,7 @@ language: "es"
 series: "GemStudio: Prompt-as-Code & Declarative AI Systems"
 series_part: 1
 category: "AI"
-tags: [prompt-as-code, schema-driven, devops, sre, gemini-gems, declarative-ai, ci-cd]
+tags: [prompt-as-code, schema-driven, devops, platform-engineering, gemini-gems, declarative-ai, ci-cd]
 author: "Ricardo Masabel"
 date: "2026-10-08"
 status: "ready-to-publish"
@@ -127,7 +127,7 @@ Para desglosar en profundidad cada una de las capas de diseño de software, infr
 
 - **Entrega 1 (Este artículo):** *El Manifiesto Fundacional — La ilusión de los "Custom Assistants" ha muerto: por qué necesitas Prompt-as-Code*.
 - **Entrega 2:** *La Autopsia del Ecosistema — De la GPT Store al olvido: autopsia técnica a los jardines vallados de IA*.
-- **Entrega 3:** *El Paradigma SRE — Pensar como SRE en la era de los LLMs: el origen del enfoque GemStudio*.
+- **Entrega 3:** *El Paradigma DevOps — Pensar como DevOps en la era de los LLMs: el origen del enfoque GemStudio*.
 - **Entrega 4:** *La Especificación Formal y el Compilador — Desacoplando la inteligencia: JSON Schema Draft 2020-12 y compilación determinista*.
 - **Entrega 5:** *La Fábrica de Cómputo — CI/CD soberano: Runners efímeros en Docker y despliegue estático a coste cero*.
 - **Entrega 6:** *La Última Milla — Bypasseando la SPA: Inyección reactiva y sincronización client-side con Tampermonkey*.
