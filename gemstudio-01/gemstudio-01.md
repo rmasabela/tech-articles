@@ -12,6 +12,8 @@ canonical_target: "LinkedIn Articles"
 read_time: "12 - 14 min"
 ---
 
+![Cover Art](./assets/gem-studio-art01_cover.jpg)
+
 # La ilusión de los "Custom Assistants" ha muerto: por qué necesitas Prompt-as-Code
 
 *Entrega 1 de 9 de la serie [GemStudio: Prompt-as-Code & Declarative AI Systems].*
@@ -140,4 +142,5 @@ El código fuente completo de la plataforma, los esquemas formales en JSON, las 
 > Repositorio oficial: **[rmasabela/gem-studio](https://github.com/rmasabela/gem-studio)**
 
 En la siguiente entrega, realizaremos la autopsia técnica a las plataformas web de asistentes personalizados de OpenAI y Google, examinando los límites arquitectónicos que precipitaron su estancamiento y analizando por qué el modelo basado en interfaces gráficas no puede escalar hacia sistemas agénticos de nivel industrial.
+
 
