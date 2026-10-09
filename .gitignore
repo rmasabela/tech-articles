@@ -1,0 +1,14 @@
+# Obsidian workspace & caches
+.obsidian/workspace*
+.obsidian/cache/
+.obsidian/indexed*
+
+# Entornos y credenciales
+.env
+*.log
+
+# SO & IDEs
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
