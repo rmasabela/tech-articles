@@ -6,7 +6,7 @@ series_part: 1
 category: "AI"
 tags: [prompt-as-code, schema-driven, devops, platform-engineering, gemini-gems, declarative-ai, ci-cd]
 author: "Ricardo Masabel"
-date: "2026-10-08"
+date: "2026-10-13"
 status: "ready-to-publish"
 canonical_target: "LinkedIn Articles"
 read_time: "12 - 14 min"
@@ -142,3 +142,4 @@ The complete source code, formal JSON Schemas, modular prompt specifications (`v
 > Official repository: **[rmasabela/gem-studio](https://github.com/rmasabela/gem-studio)**
 
 In the next delivery, we conduct a technical post-mortem on commercial custom assistant web platforms from OpenAI and Google, examining the architectural constraints that triggered their decline and analyzing why graphical interfaces cannot scale to production-grade agentic systems.
+

@@ -6,7 +6,7 @@ series_part: 1
 category: "AI"
 tags: [prompt-as-code, schema-driven, devops, platform-engineering, gemini-gems, declarative-ai, ci-cd]
 author: "Ricardo Masabel"
-date: "2026-10-08"
+date: "2026-10-13"
 status: "ready-to-publish"
 canonical_target: "LinkedIn Articles"
 read_time: "12 - 14 min"
@@ -114,8 +114,8 @@ El pipeline de entrega continua de GemStudio prescinde completamente de la edici
 3. **Fábrica de Cómputo CI/CD Soberana a Coste Cero:** Mediante GitHub Actions, el repositorio ejecuta suites de pruebas continuas en cada push a la rama `main`. Dado que los repositorios privados agotan con rapidez la cuota mensual de minutos en runners alojados por GitHub, la infraestructura se diseñó bajo una arquitectura contenerizada desacoplada: `gem-studio-runner` ejecuta contenedores Docker sobre Ubuntu 24.04 en modo efímero (`--ephemeral`), consumiendo cero minutos facturables de la plataforma mediante scripts de arranque simétricos entre macOS (`launch.sh` vía Docker Desktop) y Windows/WSL2 (`launch.ps1` vía Docker Engine) que solicitan tokens dinámicos de corta duración a la API de GitHub CLI (`gh api`). Tras validar con éxito el esquema, el pipeline empaqueta un catálogo maestro consolidado (`index.json`) y lo despliega automáticamente hacia un catálogo estático centralizado distribuido vía CDN en GitHub Pages.
 4. **Entrega de Último Tramo (*Last-Mile Delivery* via DOM Manipulation):** Debido a que la API de Google Gemini no ofrece endpoints públicos para la creación y gestión programática de Gems en cuentas personales, la sincronización se realiza mediante ingeniería inversa del cliente web. Un userscript propio desarrollado para Tampermonkey (`gem-studio-sync.user.js`) intercepta la navegación en la Single Page Application (SPA) de Gemini (`/gems/view`, `/gems/edit/<id>`). El script inyecta una barra de herramientas en el DOM, realiza una petición `GM_xmlhttpRequest` al catálogo publicado en GitHub Pages para listar las Gems disponibles y, al accionar el botón de sincronización, localiza de forma precisa los elementos de la interfaz: escribe en el `<input>` de nombre, el `<textarea>` de descripción y detecta el contenedor `div[contenteditable="true"]` del editor de instrucciones enriquecido. Para forzar la actualización reactiva del estado interno de la plataforma sin que el framework limpie el contenido, el userscript ejecuta `document.execCommand('insertText')` y despacha eventos sintéticos nativos (`InputEvent`), dejando la Gem (como VaultDistiller v1.2.0) sincronizada y lista para su uso en un solo clic.
 
-- **Figura 4 (Barra de herramientas de GemStudio inyectada en la UI de Gemini sincronizando VaultDistiller v1.2.0):**
-![Barra de herramientas flotante de GemStudio inyectada en la UI de Gemini](./assets/gem-studio-art01_fig_04.png)
+- **Figura 4 (Barra de herramientas flotante de GemStudio inyectada en la UI de Gemini sincronizando VaultDistiller v1.2.0):**
+![Barra de herramientas flotante de GemStudio inyectada en la UI de Gemini sincronizando VaultDistiller v1.2.0](./assets/gem-studio-art01_fig_04.png)
 
 ---
 
@@ -142,3 +142,4 @@ El código fuente completo de la plataforma, los esquemas formales en JSON, las 
 > Repositorio oficial: **[rmasabela/gem-studio](https://github.com/rmasabela/gem-studio)**
 
 En la siguiente entrega, realizaremos la autopsia técnica a las plataformas web de asistentes personalizados de OpenAI y Google, examinando los límites arquitectónicos que precipitaron su estancamiento y analizando por qué el modelo basado en interfaces gráficas no puede escalar hacia sistemas agénticos de nivel industrial.
+
