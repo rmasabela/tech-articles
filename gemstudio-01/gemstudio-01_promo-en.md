@@ -11,29 +11,34 @@ assets:
   fallback_image: "./assets/gem-studio-art01_cover.jpg"
 ---
 
-Pasting operational LLM instructions into a browser <textarea> is not software engineering: it is compounding technical debt.
+Building system intelligence inside a disposable browser textarea is not software engineering: it is compounding technical debt on an asset you do not own.
 
-In late 2023, the industry assumed that wrapping prompts inside web forms and commercial marketplaces was the future of custom assistants. Today, the verdict is definitive: the "prompt app store" model and passive chat wrappers have hit an architectural ceiling.
+In late 2023, the industry rushed to celebrate custom assistant stores: the GPT Store and Gemini Gems promised to democratize AI specialization with a few clicks. Today, the verdict is definitive: the "prompt app store" model and passive chat wrappers have hit an architectural dead end.
 
-Without atomic version control, schema enforcement, automated testing, or deterministic rollbacks, an accidental browser save wipes out weeks of prompt calibration. If your core system instructions exist only inside a vendor's web UI, you do not own your intellectual property.
+With foundation models capable of native reasoning and processing millions of tokens in context, most of these micro-assistants were rendered obsolete in a single turn. But the core problem was never model intelligence—it was operational architecture: fragile web builders, zero static schema validation, no version control, and total vulnerability to third-party platform churn.
 
 Today, I am launching the technical series "GemStudio: Prompt-as-Code & Declarative AI Systems" with Part 1:
 
-📖 "The Custom Assistant Illusion Is Dead: Why You Need Prompt-as-Code"
+📖 "The Illusion of 'Custom Assistants' Is Dead: Why You Need Prompt-as-Code"
 
-In this foundation article, I walk through the production architecture of the reference repository gem-studio:
+In this foundational article, I establish the methodology and walk through the production architecture of the reference repository gem-studio:
 
-• Single Source of Truth: Decoupled YAML metadata and pure Markdown instructions governed under Git and SemVer.
-• Strict Data Contracts: Pre-flight validation via JSON Schema (Draft 2020-12) and deterministic Python compilation.
-• Sovereign CI/CD Factory: Ephemeral containerized runners on Docker with zero billable GitHub Actions minutes.
-• Last-Mile Delivery: Reactive client-side hydration in Gemini's web SPA via Tampermonkey and synthetic DOM event dispatching.
+🔹 Single Source of Truth: Decoupled YAML metadata and pure Markdown instructions tracked under Git and SemVer.
 
-The full article with architectural flowcharts is now live on LinkedIn Articles.
+🔹 Strict Data Contracts: Pre-flight validation via JSON Schema (Draft 2020-12) and deterministic compilation.
+
+🔹 Decoupled Supply Chain: Automated CI/CD pipelines and high-availability static CDN catalog distribution.
+
+🔹 Last-Mile Delivery: Reactive client-side hydration via userscript to force UI state updates without public API dependencies.
+
+The full article along with all architectural diagrams is live on LinkedIn Articles.
 
 Open-source and MIT-licensed on GitHub:
+
 🔗 Repository: https://github.com/rmasabela/gem-studio
+
 📄 Full Article: [Link to your published LinkedIn Article]
 
-Are you still maintaining operational prompts inside disposable web boxes, or are you managing your model intelligence as declarative infrastructure? Thoughts welcome below.
+Are you still configuring critical prompts inside disposable web boxes, or are you managing your model intelligence as declarative infrastructure? Thoughts welcome below.
 
-#PromptAsCode #PlatformEngineering #DevOps #GitOps #SoftwareEngineering #OpenSource
+#PromptAsCode #PlatformEngineering #DevOps #GitOps #GeminiGems #OpenSource

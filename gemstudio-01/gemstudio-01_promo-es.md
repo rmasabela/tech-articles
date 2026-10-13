@@ -11,27 +11,32 @@ assets:
   fallback_image: "./assets/gem-studio-art01_cover.jpg"
 ---
 
-Programar el comportamiento de un LLM en un <textarea> web no es ingeniería de software: es una deuda técnica esperando a explotar.
+Construir la inteligencia de tu sistema en una caja de texto web de formulario no es software: es acumular deuda técnica sobre un activo que no controlas.
 
-A finales de 2023, la industria adoptó la premisa de que encapsular prompts en formularios web y tiendas comerciales era el futuro de los asistentes personalizados. Hoy el diagnóstico es claro: el modelo de "App Store de prompts" y cajas negras tocó techo.
+A finales de 2023, la industria celebró con euforia las tiendas de asistentes personalizados: la GPT Store y las Gems de Gemini prometían democratizar la IA a golpe de clic. Hoy el veredicto operativo es claro: el modelo de "App Store de prompts" y envoltorios superficiales tocó techo.
 
-Sin control de versiones atómico, sin validación estática de esquemas, sin tests automatizados y sin rollbacks deterministas, cualquier guardado accidental en el navegador destruye semanas de calibración fina. Si tus directivas solo viven en el editor web de un proveedor, tu propiedad intelectual no te pertenece.
+Con modelos fundacionales que razonan de forma nativa y procesan millones de tokens de contexto, la mayoría de estos micro-asistentes quedaron obsoletos. Pero el problema de fondo nunca fue el modelo, sino la ingeniería: interfaces efímeras, ausencia de validación estática, falta de control de versiones y dependencia total de las decisiones de interfaz de un tercero.
 
-Hoy inauguro la serie técnica "GemStudio: Prompt-as-Code & Declarative AI Systems" con la Entrega 1:
+Hoy inicio la serie técnica "GemStudio: Prompt-as-Code & Declarative AI Systems" con la Entrega 1:
 
-📖 "La ilusión de los 'Custom Assistants' ha muerto: por qué necesitas Prompt-as-Code"
+📖 "La Ilusión de los 'Custom Assistants' Ha Muerto: Por Qué Necesitas Prompt-as-Code"
 
-En este artículo inaugural desgloso la arquitectura del repositorio de referencia gem-studio:
+En este artículo inaugural planteo el marco metodológico y presento la arquitectura del repositorio de referencia gem-studio:
 
-• Single Source of Truth: Definiciones desacopladas en YAML y Markdown puro bajo Git y SemVer.
-• Contratos Formales: Validación estricta con JSON Schema (Draft 2020-12) y compilador determinista en Python.
-• Cómputo CI/CD Soberano: GitHub Actions sobre runners efímeros en Docker a coste cero.
-• Last-Mile Delivery: Sincronización reactiva con la SPA de Gemini vía Tampermonkey y despacho sintético de eventos DOM.
+🔹 Single Source of Truth: Definiciones desacopladas en YAML y Markdown puro gobernadas bajo Git y SemVer.
+
+🔹 Contratos de Datos Formales: Validación estricta con JSON Schema (Draft 2020-12) y compilación determinista.
+
+🔹 Cadena de Suministro Desacoplada: Pipeline de CI/CD automatizado y distribución estática de alta disponibilidad.
+
+🔹 Last-Mile Delivery: Sincronización reactiva en el cliente mediante userscript para forzar el estado en la SPA de Gemini sin depender de APIs inexistentes.
 
 El artículo completo con sus diagramas de arquitectura ya está disponible en LinkedIn Articles.
 
 El framework es de código abierto bajo licencia MIT:
+
 🔗 Repositorio: https://github.com/rmasabela/gem-studio
+
 📄 Artículo completo: [Enlace a tu artículo de LinkedIn recién publicado]
 
 ¿Sigues gestionando directivas operativas pegando texto en el navegador o tratas a tus prompts como infraestructura declarativa? Debate abierto en comentarios.
