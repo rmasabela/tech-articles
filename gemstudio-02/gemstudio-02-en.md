@@ -64,7 +64,7 @@ The core issue does not lie within the cognitive reasoning of the underlying mod
 Within commercial web builders (***contenteditable***, ***textarea***), persistence is inherently destructive:
 
 * **Hot-swapping production state:** Every click on "Save" overwrites the active production state without generating a cryptographic commit hash. There are no commits, tags, or staging environments.
-* **Inability to isolate experiments:** Developers cannot branch off feature branches (***feature branches***) to validate prompt tweaks without impacting active end users.
+* **Inability to isolate experiments:** Developers cannot spin up isolated feature branches to validate prompt tweaks without impacting active end users.
 * **Absence of deterministic rollbacks:** When a subtle wording change degrades the model's structural constraints, recovering yesterday's known-good configuration with surgical certainty becomes impossible.
 
 ### Failure Mode 2: Missing Contracts and Validation Blindness
@@ -156,4 +156,4 @@ Commercial assistant stores served a pedagogical purpose: introducing customized
 
 Fixing this fragility does not require prettier interfaces; it demands the operational rigor of distributed systems, immutable infrastructure, and declarative pipelines.
 
-In **Part 3** (*"Thinking Like DevOps in the Age of LLMs: The Origins of the GemStudio Approach"*), we explore how the core tenets of SRE, Infrastructure as Code (IaC), and continuous integration allow engineering teams to govern non-deterministic AI systems with the same predictability applied to mission-critical infrastructure.
+In **Part 3** (*"Thinking Like DevOps in the Age of LLMs: The Origins of the GemStudio Approach"*), we will explore how the core tenets of SRE, Infrastructure as Code (IaC), and continuous integration allow engineering teams to govern non-deterministic AI systems with the same predictability applied to mission-critical infrastructure.
