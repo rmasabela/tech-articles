@@ -1,0 +1,25 @@
+graph LR
+    subgraph Mono["GUI Antipattern: Unstructured Monolith"]
+        direction TB
+        M["Single &lt;textarea&gt; / contenteditable<br/>-----------------------------------------<br/>• Scattered metadata and authorship<br/>• Plain-text implicit tooling contracts<br/>• Algorithmic business logic<br/>• Style, tone, and cadence directives"]
+    end
+
+    subgraph Decoupled["Declarative Architecture: Separation of Concerns (SoC)"]
+        direction TB
+        subgraph TopRow["Governance & Behavioral Layer"]
+            direction LR
+            S1["meta.yaml<br/>-----------------------------<br/>• Governance & SemVer<br/>• Tooling contracts (tools)"]
+            S3["tone_and_style.md<br/>-----------------------------<br/>• Behavioral tone<br/>• Output modulation"]
+        end
+        subgraph BottomRow["Procedural Business Layer"]
+            direction LR
+            S2["instructions.md<br/>----------------------------------------------------------<br/>• Procedural algorithms & Execution workflows<br/>• Strict business constraints & Guardrails"]
+        end
+    end
+
+    Mono ==>|GitOps modular decoupling| Decoupled
+
+    classDef redBox fill:#2a1b1b,stroke:#f38ba8,stroke-width:1px,color:#cdd6f4;
+    classDef greenBox fill:#1b2a22,stroke:#a6e3a1,stroke-width:1px,color:#cdd6f4;
+    class M redBox;
+    class S1,S2,S3 greenBox;

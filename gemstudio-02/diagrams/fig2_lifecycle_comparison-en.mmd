@@ -1,0 +1,17 @@
+graph TD
+    subgraph WF["Brittle Lifecycle: Web Form Builder"]
+        A1["In-Place Hot Editing<br/>(contenteditable)"] --> A2["Destructive Overwrite<br/>(No commit / No diff)"]
+        A2 --> A3["Blind Runtime<br/>(Zero validation & telemetry)"]
+        A3 -.->|Undetected regression| A1
+    end
+
+    subgraph DC["Reliable Lifecycle: Declarative GitOps"]
+        B1["Decoupled Source<br/>(meta.yaml + instructions.md)"] --> B2["Pre-Flight Validation<br/>(JSON Schema Audit)"]
+        B2 --> B3["Immutable Compilation<br/>(dist/artifact.json)"]
+        B3 --> B4["Audited Deployment<br/>(SemVer + CI/CD Tags)"]
+    end
+
+    classDef redBox fill:#2a1b1b,stroke:#f38ba8,stroke-width:1px,color:#cdd6f4;
+    classDef greenBox fill:#1b2a22,stroke:#a6e3a1,stroke-width:1px,color:#cdd6f4;
+    class A1,A2,A3 redBox;
+    class B1,B2,B3,B4 greenBox;
