@@ -1,0 +1,17 @@
+graph TD
+    subgraph WF["Ciclo Frágil: Constructor Web"]
+        A1["Edición en Caliente<br/>(contenteditable)"] --> A2["Sobreescritura Destructiva<br/>(Sin commit / Sin diff)"]
+        A2 --> A3["Runtime Ciego<br/>(Sin validación ni telemetría)"]
+        A3 -.->|Regresión inadvertida| A1
+    end
+
+    subgraph DC["Ciclo Confiable: Declarativo GitOps"]
+        B1["Fuente Desacoplada<br/>(meta.yaml + instructions.md)"] --> B2["Pre-Flight Validation<br/>(JSON Schema Audit)"]
+        B2 --> B3["Compilación Inmutable<br/>(dist/artifact.json)"]
+        B3 --> B4["Despliegue Auditado<br/>(SemVer + CI/CD Tags)"]
+    end
+
+    classDef redBox fill:#2a1b1b,stroke:#f38ba8,stroke-width:1px,color:#cdd6f4;
+    classDef greenBox fill:#1b2a22,stroke:#a6e3a1,stroke-width:1px,color:#cdd6f4;
+    class A1,A2,A3 redBox;
+    class B1,B2,B3,B4 greenBox;
