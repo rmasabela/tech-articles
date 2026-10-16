@@ -122,13 +122,31 @@ Treating prompts as decoupled code guarantees architectural sovereignty: the eng
 
 ## 6. Architectural Matrix: Walled Garden GUI vs. Declarative Pipeline
 
-| Dimension | Walled Garden Web UI (GPTs / Gems) | Declarative Prompt-as-Code |
-| --- | --- | --- |
-| **Source of Truth** | Opaque third-party database | Local, version-controlled Git repository |
-| **Change Control** | Destructive, unversioned in-place writes | Conventional Commits and atomic ***git blame*** |
-| **Data Governance** | Unchecked plain-text input | Strict validation schema (JSON Schema Draft 2020-12) |
-| **Separation of Concerns** | Monolithic text blob (metadata + logic + tone) | Modular decoupling (***meta.yaml***, ***instructions.md***) |
-| **Portability** | Locked to vendor proprietary interface | Vendor-agnostic: compiles to JSON, APIs, or autonomous runtimes |
+The divide between both paradigms spans five architectural dimensions:
+
+**Single Source of Truth:**
+* *Walled Garden Web UI:* Opaque proprietary database hosted in vendor infrastructure.
+* *Declarative Prompt-as-Code:* Local, version-controlled, and fully auditable Git repository.
+
+
+**Change Control & Traceability:**
+* *Walled Garden Web UI:* Destructive in-place overwrites with zero change history.
+* *Declarative Prompt-as-Code:* Atomic Conventional Commits and surgical forensic inspection via ***git blame***.
+
+
+**Data Governance & Payload Validation:**
+* *Walled Garden Web UI:* Passive plain-text ingestion without contract enforcement.
+* *Declarative Prompt-as-Code:* Strict schema contracts enforced via JSON Schema (Draft 2020-12).
+
+
+**Separation of Concerns (SoC):**
+* *Walled Garden Web UI:* Monolithic unstructured text blob (metadata + tooling + logic + tone).
+* *Declarative Prompt-as-Code:* Physical modular decoupling (***meta.yaml***, ***instructions.md***, ***tone_and_style.md***).
+
+
+**Portability & Sovereignty:**
+* *Walled Garden Web UI:* Hard lock-in to vendor-controlled browser interfaces.
+* *Declarative Prompt-as-Code:* Neutral: compiles to clean JSON manifests usable across APIs, custom agents, or local runtimes.
 
 ---
 

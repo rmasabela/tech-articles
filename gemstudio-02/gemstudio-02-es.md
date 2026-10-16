@@ -122,13 +122,31 @@ Tratar los prompts como código desacoplado garantiza la soberanía del diseño:
 
 ## 6. Matriz de Arquitectura: GUI Cautiva vs. Declarativo
 
-| Dimensión | Walled Garden Web UI (GPTs / Gems) | Prompt-as-Code Declarativo |
-| --- | --- | --- |
-| **Fuente de Verdad** | Base de datos propietaria opaca | Repositorio Git versionado localmente |
-| **Control de Cambios** | Sobreescritura in-place no versionada | Conventional Commits y trazabilidad ***git blame*** |
-| **Gobernanza de Datos** | Aceptación ciega de texto plano | Contrato estricto (JSON Schema Draft 2020-12) |
-| **Separación de Capas** | Monolito de texto (metadatos + lógica + estilo) | Desacoplamiento modular (***meta.yaml***, ***instructions.md***) |
-| **Portabilidad** | Cautiva al entorno gráfico del proveedor | Neutral: compilable a JSON, APIs o agentes autónomos |
+La brecha entre ambos paradigmas se manifiesta en cinco dimensiones arquitectónicas:
+
+**Fuente de Verdad (Single Source of Truth):**
+* *Walled Garden Web UI:* Base de datos propietaria opaca controlada por el proveedor.
+* *Prompt-as-Code Declarativo:* Repositorio Git versionado localmente y auditable.
+
+
+**Control de Cambios y Trazabilidad:**
+* *Walled Garden Web UI:* Sobreescritura in-place destructiva sin historial de cambios.
+* *Prompt-as-Code Declarativo:* Conventional Commits atómicos y auditoría quirúrgica con ***git blame***.
+
+
+**Gobernanza y Validación de Datos:**
+* *Walled Garden Web UI:* Aceptación ciega de texto plano sin contratos de interfaz.
+* *Prompt-as-Code Declarativo:* Validación contractual estricta mediante JSON Schema (Draft 2020-12).
+
+
+**Separación de Responsabilidades (SoC):**
+* *Walled Garden Web UI:* Monolito textual no estructurado (metadatos + herramientas + lógica + estilo).
+* *Prompt-as-Code Declarativo:* Desacoplamiento modular físico (***meta.yaml***, ***instructions.md***, ***tone_and_style.md***).
+
+
+**Portabilidad y Soberanía Operativa:**
+* *Walled Garden Web UI:* Cautiva al entorno gráfico del proveedor (vendor lock-in severo).
+* *Prompt-as-Code Declarativo:* Agnóstica: artefactos compilables a JSON, utilizables en APIs, frameworks locales o agentes autónomos.
 
 ---
 
