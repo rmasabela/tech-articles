@@ -1,4 +1,4 @@
----
+﻿---
 title: "From the GPT Store to Oblivion: A Technical Autopsy of AI Walled Gardens"
 language: "en"
 series: "GemStudio: Prompt-as-Code & Declarative AI Systems"
@@ -45,12 +45,8 @@ This failure did not stem from a lack of user adoption, but from a fundamental a
 
 Commercial assistant marketplaces operated under the premise that a prompt wrapped in a proprietary interface constituted standalone software. Production reality proved otherwise: 95% of published catalogs were shallow wrappers consisting of three descriptive lines and an unindexed text document.
 
-```text
-# Typical anatomy of a commercial micro-assistant:
-"Act as a senior software architect specializing in AWS. 
-Review the provided architecture and suggest cost optimizations following the Well-Architected Framework..."
-
-```
+> ***# Typical anatomy of a commercial micro-assistant:***
+> *"Act as a senior software architect specializing in AWS. Review the provided architecture and suggest cost optimizations following the Well-Architected Framework..."*
 
 The evolution of foundation models dismantled this business model on two fronts:
 
@@ -65,17 +61,17 @@ The core issue does not lie within the cognitive reasoning of the underlying mod
 
 ### Failure Mode 1: In-Place Destructive Overwrites
 
-Within commercial web builders (`contenteditable`, `<textarea>`), persistence is inherently destructive:
+Within commercial web builders (***contenteditable***, ***textarea***), persistence is inherently destructive:
 
 * **Hot-swapping production state:** Every click on "Save" overwrites the active production state without generating a cryptographic commit hash. There are no commits, tags, or staging environments.
-* **Inability to isolate experiments:** Developers cannot branch off feature branches to validate prompt tweaks without impacting active end users.
+* **Inability to isolate experiments:** Developers cannot branch off feature branches (***feature branches***) to validate prompt tweaks without impacting active end users.
 * **Absence of deterministic rollbacks:** When a subtle wording change degrades the model's structural constraints, recovering yesterday's known-good configuration with surgical certainty becomes impossible.
 
 ### Failure Mode 2: Missing Contracts and Validation Blindness
 
 Visual builders operate under passive acceptance: they take arbitrary plain text without asserting payload integrity.
 
-* They lack static linters capable of blocking deployment if operational metadata or formal Semantic Versioning (`MAJOR.MINOR.PATCH`) is omitted.
+* They lack static linters capable of blocking deployment if operational metadata or formal Semantic Versioning (***MAJOR.MINOR.PATCH***) is omitted.
 * They fail to catch logic inconsistencies at design time: demanding tool invocations in procedural text while leaving those capabilities disabled in the platform toggles causes silent runtime failures.
 * Validation shifts entirely to runtime, leaving end users exposed to schema degradation and hallucinations.
 
@@ -86,7 +82,7 @@ Production-grade assistants require four decoupled architectural layers: governa
 Forcing all these responsibilities into a single monolithic block of text guarantees that tweaking tone or phrasing will inadvertently contaminate business logic, drastically increasing regression risks.
 
 * **Figure 1 (Matrix Decomposition: SoC Collapse in Web Forms vs. Modular Git Decoupling):**
-![Matrix Decomposition: SoC Collapse in Web Forms vs. Modular Git Decoupling](./assets/gem-studio-art02_fig_01.png)
+![Matrix Decomposition: SoC Collapse in Web Forms vs. Modular Git Decoupling](./assets/gem-studio-art02_fig_01-en.png)
 
 ---
 
@@ -95,7 +91,7 @@ Forcing all these responsibilities into a single monolithic block of text guaran
 The fragility of manual UI interaction contrasts sharply with an automated, declarative delivery pipeline:
 
 * **Figure 2 (Topological Comparison: Mutable Web Lifecycle vs. Declarative GitOps Pipeline):**
-![Topological Comparison: Mutable Web Lifecycle vs. Declarative GitOps Pipeline](./assets/gem-studio-art02_fig_02.png)
+![Topological Comparison: Mutable Web Lifecycle vs. Declarative GitOps Pipeline](./assets/gem-studio-art02_fig_02-en.png)
 
 ---
 
@@ -129,9 +125,9 @@ Treating prompts as decoupled code guarantees architectural sovereignty: the eng
 | Dimension | Walled Garden Web UI (GPTs / Gems) | Declarative Prompt-as-Code |
 | --- | --- | --- |
 | **Source of Truth** | Opaque third-party database | Local, version-controlled Git repository |
-| **Change Control** | Destructive, unversioned in-place writes | Conventional Commits and atomic `git blame` |
+| **Change Control** | Destructive, unversioned in-place writes | Conventional Commits and atomic ***git blame*** |
 | **Data Governance** | Unchecked plain-text input | Strict validation schema (JSON Schema Draft 2020-12) |
-| **Separation of Concerns** | Monolithic text blob (metadata + logic + tone) | Modular decoupling (`meta.yaml`, `instructions.md`) |
+| **Separation of Concerns** | Monolithic text blob (metadata + logic + tone) | Modular decoupling (***meta.yaml***, ***instructions.md***) |
 | **Portability** | Locked to vendor proprietary interface | Vendor-agnostic: compiles to JSON, APIs, or autonomous runtimes |
 
 ---

@@ -1,4 +1,4 @@
----
+﻿---
 title: "De la GPT Store al olvido: autopsia técnica a los jardines vallados de IA"
 language: "es"
 series: "GemStudio: Prompt-as-Code & Declarative AI Systems"
@@ -45,12 +45,8 @@ El colapso no fue provocado por falta de adopción de los usuarios, sino por una
 
 Las tiendas comerciales de asistentes asumieron que un prompt empaquetado en una interfaz propietaria constituía un producto de software independiente. La realidad operativa demostró que el 95% de los catálogos correspondía a envoltorios superficiales (*shallow wrappers*): tres líneas descriptivas y un documento plano.
 
-```text
-# Anatomía típica del micro-asistente web comercial:
-"Actúa como un arquitecto de software senior especializado en AWS. 
-Revisa la arquitectura proporcionada y sugiere optimizaciones de coste según el Well-Architected Framework..."
-
-```
+> ***# Anatomía típica de un micro-asistente comercial:***
+> *"Actúa como un arquitecto de software senior especializado en AWS. Revisa la arquitectura proporcionada y sugiere optimizaciones de coste según el Well-Architected Framework..."*
 
 La evolución de los modelos fundacionales evaporó este modelo de negocio en dos frentes simultáneos:
 
@@ -65,17 +61,17 @@ El problema fundamental no radica en la capacidad cognitiva de los modelos, sino
 
 ### Modo de Fallo 1: Mutabilidad Destructiva in-situ (*In-Place Overwrites*)
 
-En un formulario web comercial (`contenteditable`, `<textarea>`), la persistencia es destructiva por definición:
+En un formulario web comercial (***contenteditable***, ***textarea***), la persistencia es destructiva por definición:
 
-* **Sobreescritura en caliente:** Cada clic en "Guardar" sustituye el estado activo en producción sin generar un hash criptográfico de seguimiento. No existe el concepto de *commit*, *tag* o *staging*.
-* **Imposibilidad de aislamiento:** No se pueden instanciar ramas (*feature branches*) para ensayar variaciones heurísticas de un prompt sin alterar la experiencia de los consumidores activos.
+* **Sobreescritura en caliente:** Cada clic en "Guardar" sustituye el estado activo en producción sin generar un hash criptográfico de seguimiento. No existe el concepto de ***commit***, ***tag*** o ***staging***.
+* **Imposibilidad de aislamiento:** No se pueden instanciar ramas (***feature branches***) para ensayar variaciones heurísticas de un prompt sin alterar la experiencia de los consumidores activos.
 * **Ausencia de rollback determinista:** Si un ajuste sutil en la redacción degrada las restricciones de salida del modelo, resulta inviable recuperar con certeza quirúrgica la versión exacta que funcionaba ayer.
 
 ### Modo de Fallo 2: Contratos Inexistentes y Ceguera de Validación
 
 Los constructores visuales operan bajo una asunción pasiva: aceptan cualquier entrada de texto plano sin validar la integridad del artefacto.
 
-* No existen analizadores estáticos que impidan el guardado si se omite un metadato operativo o un versionado semántico formal (`MAJOR.MINOR.PATCH`).
+* No existen analizadores estáticos que impidan el guardado si se omite un metadato operativo o un versionado semántico formal (***MAJOR.MINOR.PATCH***).
 * No se previenen inconsistencias lógicas en tiempo de diseño: exigir en el texto procedimental la invocación de herramientas externas mientras se mantienen deshabilitadas en la interfaz genera fallos silenciosos.
 * La validación queda transferida en su totalidad al *runtime*, exponiendo a los usuarios a alucinaciones o degradaciones de formato.
 
@@ -86,7 +82,7 @@ Un asistente industrial exige distinguir formalmente cuatro capas desacopladas: 
 Al forzar la condensación de todas estas responsabilidades en una masa monolítica de texto, cualquier modificación de tono contamina directamente las reglas de negocio, multiplicando el riesgo de regresiones operativas.
 
 * **Figura 1 (Descomposición matricial: Colapso de SoC en formulario web vs. Separación modular en Git):**
-![Descomposición matricial: Colapso de SoC en formulario web vs. Separación modular en Git](./assets/gem-studio-art02_fig_01.png)
+![Descomposición matricial: Colapso de SoC en formulario web vs. Separación modular en Git](./assets/gem-studio-art02_fig_01-es.png)
 
 ---
 
@@ -95,7 +91,7 @@ Al forzar la condensación de todas estas responsabilidades en una masa monolít
 La fragilidad del flujo interactivo tradicional contrasta con la estabilidad de una cadena de entrega automatizada:
 
 * **Figura 2 (Comparativa topológica entre el ciclo de vida web mutable y el pipeline declarativo):**
-![Comparativa topológica entre el ciclo de vida web mutable y el pipeline declarativo](./assets/gem-studio-art02_fig_02.png)
+![Comparativa topológica entre el ciclo de vida web mutable y el pipeline declarativo](./assets/gem-studio-art02_fig_02-es.png)
 
 ---
 
@@ -129,9 +125,9 @@ Tratar los prompts como código desacoplado garantiza la soberanía del diseño:
 | Dimensión | Walled Garden Web UI (GPTs / Gems) | Prompt-as-Code Declarativo |
 | --- | --- | --- |
 | **Fuente de Verdad** | Base de datos propietaria opaca | Repositorio Git versionado localmente |
-| **Control de Cambios** | Sobreescritura in-place no versionada | Conventional Commits y trazabilidad `git blame` |
+| **Control de Cambios** | Sobreescritura in-place no versionada | Conventional Commits y trazabilidad ***git blame*** |
 | **Gobernanza de Datos** | Aceptación ciega de texto plano | Contrato estricto (JSON Schema Draft 2020-12) |
-| **Separación de Capas** | Monolito de texto (metadatos + lógica + estilo) | Desacoplamiento modular (`meta.yaml`, `instructions.md`) |
+| **Separación de Capas** | Monolito de texto (metadatos + lógica + estilo) | Desacoplamiento modular (***meta.yaml***, ***instructions.md***) |
 | **Portabilidad** | Cautiva al entorno gráfico del proveedor | Neutral: compilable a JSON, APIs o agentes autónomos |
 
 ---
